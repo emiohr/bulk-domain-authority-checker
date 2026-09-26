@@ -4,6 +4,8 @@ Check **domain authority and backlinks for a whole list of domains at once**: a 
 
 It uses the [**Bulk Domain Authority & Backlink Checker**](https://apify.com/jesting_grass/bulk-domain-authority-checker) on Apify, which reads a commercial backlink index. Invalid domains and domains without backlink data are not charged.
 
+📖 Tutorial: [Check domain authority for 1,000 sites at once with Python](https://dev.to/jesting_grass/check-domain-authority-for-1000-sites-at-once-with-python-a-pay-per-use-ahrefs-alternative-570i)
+
 ## Quick start (Python)
 
 ```bash
