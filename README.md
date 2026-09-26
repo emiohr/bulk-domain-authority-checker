@@ -86,6 +86,7 @@ Prices as listed on the vendors' pricing pages in September 2026 (monthly billin
 
 ## More SEO tools from the same developer
 
+- [Backlink Checker API](https://github.com/emiohr/backlink-checker-api): every backlink, referring domains and competitor link gap
 - [Keyword Research API](https://github.com/emiohr/keyword-research-api): search volume, keyword difficulty, intent and AI Overviews in bulk
 - [Google Trends API](https://github.com/emiohr/google-trends-api): interest over time, rising queries and regions
 - [BuiltWith & Wappalyzer alternative](https://github.com/emiohr/builtwith-wappalyzer-alternative): tech stack of any website in bulk
