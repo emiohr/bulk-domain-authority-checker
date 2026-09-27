@@ -26,13 +26,13 @@ for row in client.dataset(run.default_dataset_id).iterate_items():
 
 Real output (September 2026):
 
-| domain | domainRank | referringDomains | backlinks | dofollowRatio | referringDomainsChange (30 d) |
+| domain | domainRank | referringDomains | backlinks | dofollowRatio | spamScore |
 |---|---|---|---|---|---|
-| dev.to | 70 | 46,486 | 1,167,777 | 0.75 | −108 |
-| hashnode.com | 60 | 10,787 | 683,515 | 0.82 | −30 |
-| indiehackers.com | 58 | 7,520 | 66,592 | 0.73 | −31 |
-| allbirds.com | 57 | 7,391 | 30,318 | 0.90 | −7 |
-| gymshark.com | 56 | 5,540 | 178,435 | 0.96 | −59 |
+| dev.to | 82 | 93,830 | 17,292,820 | 0.81 | 13 |
+| hashnode.com | 82 | 88,946 | 10,021,858 | 0.95 | 23 |
+| indiehackers.com | 68 | 14,704 | 709,281 | 0.95 | 16 |
+| gymshark.com | 59 | 9,663 | 99,941 | 0.63 | 24 |
+| allbirds.com | 58 | 9,310 | 91,766 | 0.88 | 6 |
 
 URLs are fine as input: `https://`, `www.` and paths are stripped, and duplicates are removed.
 
@@ -49,15 +49,14 @@ URLs are fine as input: `https://`, `www.` and paths are stripped, and duplicate
 
 | Field | Meaning |
 |---|---|
-| `domainRank` | Authority score 0–100 from the domain's backlink profile (Serpstat Domain Rank: similar in spirit to Moz DA or Ahrefs DR, not identical) |
-| `referringDomains` | Unique websites linking to the domain |
-| `backlinks` | Total backlinks |
-| `dofollowBacklinks`, `nofollowBacklinks`, `dofollowRatio` | Link quality split |
-| `referringIps`, `referringSubnets` | Diversity of linking sites |
-| `backlinksFromHomepages`, `textBacklinks`, `imageBacklinks`, `redirectBacklinks` | Link types |
-| `outboundDomains`, `outboundLinks` | Who the domain links out to |
-| `maliciousReferringDomains` | Referring domains flagged as malicious (toxic-link signal) |
-| `referringDomainsChange`, `backlinksChange`, `dofollowBacklinksChange` | Change over roughly the last 30 days |
+| `domainRank` | Authority score 0–100 from the domain's backlink profile (similar in spirit to Moz DA or Ahrefs DR, not identical) |
+| `referringDomains`, `referringMainDomains` | Unique websites (and root domains) linking to the domain |
+| `backlinks`, `dofollowBacklinks`, `nofollowBacklinks`, `dofollowRatio` | Total links and their quality split |
+| `referringIps`, `referringSubnets`, `referringPages` | Diversity of linking sites |
+| `textBacklinks`, `imageBacklinks`, `redirectBacklinks` | Link types |
+| `spamScore` | 0–100 spam signal of the backlink profile |
+| `brokenBacklinks` | Links pointing to pages that no longer work |
+| `newReferringDomains`, `lostReferringDomains`, `referringDomainsChange`, `newBacklinks`, `lostBacklinks`, `backlinksChange` | Last 30 days, with `includeChanges: true` |
 
 ## Ahrefs vs Semrush vs this
 

@@ -9,7 +9,7 @@ import os
 from apify_client import ApifyClient
 
 DOMAINS = ["dev.to", "allbirds.com", "gymshark.com", "hashnode.com", "indiehackers.com"]
-COLUMNS = ["domain", "domainRank", "referringDomains", "backlinks", "dofollowRatio", "referringDomainsChange"]
+COLUMNS = ["domain", "domainRank", "referringDomains", "backlinks", "dofollowRatio", "spamScore", "brokenBacklinks"]
 
 client = ApifyClient(os.environ["APIFY_TOKEN"])
 run = client.actor("jesting_grass/bulk-domain-authority-checker").call(run_input={"domains": DOMAINS})
